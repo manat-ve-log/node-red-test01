@@ -1,1 +1,87 @@
-[]
+[
+    {
+        "id": "808d4e825f01b9a4",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "80ab295f3f91c00a",
+        "type": "global-config",
+        "env": [
+            {
+                "name": "TokenKey",
+                "value": "__PWRD__",
+                "type": "cred"
+            }
+        ],
+        "modules": {}
+    },
+    {
+        "id": "9d47dd14c8258984",
+        "type": "debug",
+        "z": "808d4e825f01b9a4",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "a63d330f927a5f21",
+        "type": "inject",
+        "z": "808d4e825f01b9a4",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 220,
+        "y": 240,
+        "wires": [
+            [
+                "1c9e915ef11d6208"
+            ]
+        ]
+    },
+    {
+        "id": "1c9e915ef11d6208",
+        "type": "function",
+        "z": "808d4e825f01b9a4",
+        "name": "function 1",
+        "func": "var xxx = env.get(\"TokenKey\");\nreturn { payload: xxx };",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 360,
+        "wires": [
+            [
+                "9d47dd14c8258984"
+            ]
+        ]
+    }
+]
