@@ -20,6 +20,31 @@
         "modules": {}
     },
     {
+        "id": "75b1cedd0d717db2",
+        "type": "postgreSQLConfig",
+        "name": "",
+        "host": "127.0.0.1",
+        "hostFieldType": "str",
+        "port": 5432,
+        "portFieldType": "num",
+        "database": "postgres",
+        "databaseFieldType": "str",
+        "ssl": "true",
+        "sslFieldType": "bool",
+        "applicationName": "",
+        "applicationNameType": "str",
+        "max": 10,
+        "maxFieldType": "num",
+        "idle": 1000,
+        "idleFieldType": "num",
+        "connectionTimeout": 10000,
+        "connectionTimeoutFieldType": "num",
+        "user": "xxxx",
+        "userFieldType": "str",
+        "password": "env.get(\"TokenKey\")",
+        "passwordFieldType": "str"
+    },
+    {
         "id": "a63d330f927a5f21",
         "type": "inject",
         "z": "808d4e825f01b9a4",
@@ -44,7 +69,8 @@
         "y": 240,
         "wires": [
             [
-                "1c9e915ef11d6208"
+                "1c9e915ef11d6208",
+                "53e580c78c9ea9e5"
             ]
         ]
     },
@@ -83,5 +109,23 @@
         "x": 1140,
         "y": 460,
         "wires": []
+    },
+    {
+        "id": "53e580c78c9ea9e5",
+        "type": "postgresql",
+        "z": "808d4e825f01b9a4",
+        "name": "",
+        "query": "SELECT * FROM ;",
+        "postgreSQLConfig": "75b1cedd0d717db2",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 630,
+        "y": 480,
+        "wires": [
+            [
+                "b84843be19d8c5f2"
+            ]
+        ]
     }
 ]
