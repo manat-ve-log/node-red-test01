@@ -20,22 +20,6 @@
         "modules": {}
     },
     {
-        "id": "9d47dd14c8258984",
-        "type": "debug",
-        "z": "808d4e825f01b9a4",
-        "name": "debug 1",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1120,
-        "y": 140,
-        "wires": []
-    },
-    {
         "id": "a63d330f927a5f21",
         "type": "inject",
         "z": "808d4e825f01b9a4",
@@ -80,7 +64,6 @@
         "y": 320,
         "wires": [
             [
-                "9d47dd14c8258984",
                 "b84843be19d8c5f2"
             ]
         ]
@@ -97,8 +80,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1100,
-        "y": 300,
+        "x": 1140,
+        "y": 460,
         "wires": []
     }
 ]
