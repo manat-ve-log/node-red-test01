@@ -29,7 +29,7 @@
         "portFieldType": "num",
         "database": "postgres",
         "databaseFieldType": "str",
-        "ssl": "true",
+        "ssl": "false",
         "sslFieldType": "bool",
         "applicationName": "",
         "applicationNameType": "str",
@@ -41,8 +41,8 @@
         "connectionTimeoutFieldType": "num",
         "user": "xxxx",
         "userFieldType": "str",
-        "password": "env.get(\"TokenKey\")",
-        "passwordFieldType": "str"
+        "password": "TokenKey",
+        "passwordFieldType": "env"
     },
     {
         "id": "a63d330f927a5f21",
