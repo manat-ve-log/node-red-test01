@@ -18,8 +18,8 @@
             },
             {
                 "name": "AAA",
-                "value": "1234",
-                "type": "str"
+                "value": "TEST_PASSWORD",
+                "type": "env"
             }
         ],
         "modules": {}
@@ -27,7 +27,32 @@
     {
         "id": "75b1cedd0d717db2",
         "type": "postgreSQLConfig",
-        "name": "",
+        "name": "test_postgtes_good_",
+        "host": "127.0.0.1",
+        "hostFieldType": "str",
+        "port": "16692",
+        "portFieldType": "num",
+        "database": "postgres",
+        "databaseFieldType": "str",
+        "ssl": "false",
+        "sslFieldType": "bool",
+        "applicationName": "",
+        "applicationNameType": "str",
+        "max": 10,
+        "maxFieldType": "num",
+        "idle": 1000,
+        "idleFieldType": "num",
+        "connectionTimeout": 10000,
+        "connectionTimeoutFieldType": "num",
+        "user": "postgres",
+        "userFieldType": "str",
+        "password": "TEST_PASSWORD",
+        "passwordFieldType": "env"
+    },
+    {
+        "id": "142731a3ae3f66f9",
+        "type": "postgreSQLConfig",
+        "name": "test_global",
         "host": "127.0.0.1",
         "hostFieldType": "str",
         "port": "16692",
@@ -75,7 +100,8 @@
         "wires": [
             [
                 "1c9e915ef11d6208",
-                "53e580c78c9ea9e5"
+                "53e580c78c9ea9e5",
+                "c7499faa19bc3cb5"
             ]
         ]
     },
@@ -84,7 +110,7 @@
         "type": "function",
         "z": "808d4e825f01b9a4",
         "name": "function 1",
-        "func": "var ddd = env.get(\"TEST_PASSWORD\");\nreturn { payload: ddd };",
+        "func": "var ddd = env.get(\"AAA\");\nvar inNodeRed = env.get(\"PASSWORD\");\nvar inOS = env.get(\"TEST_PASSWORD\")\n\nreturn {\n  payload: {\n    inOS: inOS,\n    inNodeRed: inNodeRed\n  }\n};",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -111,8 +137,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1140,
-        "y": 460,
+        "x": 1180,
+        "y": 340,
         "wires": []
     },
     {
@@ -120,13 +146,31 @@
         "type": "postgresql",
         "z": "808d4e825f01b9a4",
         "name": "test_portgres",
-        "query": "SELECT NOW();",
+        "query": "SELECT CURRENT_DATE;",
         "postgreSQLConfig": "75b1cedd0d717db2",
         "split": false,
         "rowsPerMsg": 1,
         "outputs": 1,
-        "x": 670,
-        "y": 620,
+        "x": 730,
+        "y": 260,
+        "wires": [
+            [
+                "b84843be19d8c5f2"
+            ]
+        ]
+    },
+    {
+        "id": "c7499faa19bc3cb5",
+        "type": "postgresql",
+        "z": "808d4e825f01b9a4",
+        "name": "test_global",
+        "query": "SELECT NOW();",
+        "postgreSQLConfig": "142731a3ae3f66f9",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 730,
+        "y": 440,
         "wires": [
             [
                 "b84843be19d8c5f2"
