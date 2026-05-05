@@ -13,8 +13,8 @@
         "env": [
             {
                 "name": "TokenKey",
-                "value": "__PWRD__",
-                "type": "cred"
+                "value": "1234",
+                "type": "str"
             }
         ],
         "modules": {}
@@ -25,7 +25,7 @@
         "name": "",
         "host": "127.0.0.1",
         "hostFieldType": "str",
-        "port": 5432,
+        "port": "16692",
         "portFieldType": "num",
         "database": "postgres",
         "databaseFieldType": "str",
@@ -39,10 +39,10 @@
         "idleFieldType": "num",
         "connectionTimeout": 10000,
         "connectionTimeoutFieldType": "num",
-        "user": "xxxx",
+        "user": "postgres",
         "userFieldType": "str",
-        "password": "TokenKey",
-        "passwordFieldType": "env"
+        "password": "1234",
+        "passwordFieldType": "str"
     },
     {
         "id": "a63d330f927a5f21",
@@ -86,8 +86,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 660,
-        "y": 320,
+        "x": 720,
+        "y": 140,
         "wires": [
             [
                 "b84843be19d8c5f2"
@@ -114,14 +114,14 @@
         "id": "53e580c78c9ea9e5",
         "type": "postgresql",
         "z": "808d4e825f01b9a4",
-        "name": "",
-        "query": "SELECT * FROM ;",
+        "name": "test_portgres",
+        "query": "SELECT * FROM;",
         "postgreSQLConfig": "75b1cedd0d717db2",
         "split": false,
         "rowsPerMsg": 1,
         "outputs": 1,
-        "x": 630,
-        "y": 480,
+        "x": 670,
+        "y": 620,
         "wires": [
             [
                 "b84843be19d8c5f2"
