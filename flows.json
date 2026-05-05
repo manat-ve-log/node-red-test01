@@ -15,6 +15,11 @@
                 "name": "PASSWORD",
                 "value": "__PWRD__",
                 "type": "cred"
+            },
+            {
+                "name": "AAA",
+                "value": "1234",
+                "type": "str"
             }
         ],
         "modules": {}
@@ -41,8 +46,8 @@
         "connectionTimeoutFieldType": "num",
         "user": "postgres",
         "userFieldType": "str",
-        "password": "1234",
-        "passwordFieldType": "str"
+        "password": "TEST_PASSWORD",
+        "passwordFieldType": "env"
     },
     {
         "id": "a63d330f927a5f21",
@@ -79,7 +84,7 @@
         "type": "function",
         "z": "808d4e825f01b9a4",
         "name": "function 1",
-        "func": "var xxx = env.get(\"TokenKey\");\nreturn { payload: xxx };",
+        "func": "var ddd = env.get(\"TEST_PASSWORD\");\nreturn { payload: ddd };",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -115,7 +120,7 @@
         "type": "postgresql",
         "z": "808d4e825f01b9a4",
         "name": "test_portgres",
-        "query": "SELECT * FROM;",
+        "query": "SELECT NOW();",
         "postgreSQLConfig": "75b1cedd0d717db2",
         "split": false,
         "rowsPerMsg": 1,
