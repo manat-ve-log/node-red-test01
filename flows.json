@@ -12,9 +12,9 @@
         "type": "global-config",
         "env": [
             {
-                "name": "TokenKey",
-                "value": "1234",
-                "type": "str"
+                "name": "PASSWORD",
+                "value": "__PWRD__",
+                "type": "cred"
             }
         ],
         "modules": {}
